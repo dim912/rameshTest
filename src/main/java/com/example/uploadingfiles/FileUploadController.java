@@ -50,6 +50,12 @@ public class FileUploadController {
 		this.storageService = storageService;
 	}
 
+	@GetMapping("/")
+	public String listUploadedFiles(Model model) throws IOException {
+
+		return "uploadForm";
+	}
+
 	@PostMapping("/")
 	public String handleFileUpload(@RequestParam("file") MultipartFile file,
 			RedirectAttributes redirectAttributes) throws IOException {

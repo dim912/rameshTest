@@ -17,11 +17,4 @@ public class UploadingFilesApplication {
 		SpringApplication.run(UploadingFilesApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner init(StorageService storageService) {
-		return (args) -> {
-			storageService.deleteAll();
-			storageService.init();
-		};
-	}
 }
